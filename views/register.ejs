@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="icon" href="/human.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('/langBac.jpg'); 
+            background-size: cover;         
+            background-position: center;    
+            background-repeat: no-repeat;    
+        }
+        
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: white;       
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="text-center">Đăng Ký</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Xác nhận mật khẩu:</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu" required oninput="checkPasswordMatch()">
+                <small id="passwordMismatch" style="color: red; display: none;">Mật khẩu không khớp!</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
+            <div class="text-center mt-3">
+                <a href="/login">Đã có tài khoản? Đăng nhập ngay!</a>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // kiểm tra xem mật khẩu có khớp không
+        function checkPasswordMatch() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const mismatchMessage = document.getElementById('passwordMismatch');
+    
+            if (password !== confirmPassword) {
+                mismatchMessage.style.display = 'inline';
+            } else {
+                mismatchMessage.style.display = 'none';
+            }
+        }
+    </script>
+    
+</body>
+</html>

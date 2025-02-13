@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm địa điểm</title>
+    <link rel="icon" href="/human.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('/langBac.jpg'); 
+            background-size: cover;         
+            background-position: center;    
+            background-repeat: no-repeat;
+        }
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="form-container">
+            <h2 class="text-center">Thêm dữ liệu địa điểm</h2>
+            <form action="/plus-diadiem" method="POST">
+                <div class="form-group">
+                    <label>Tên tên địa điểm:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Nhập tên địa điểm" required>
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ:</label>
+                    <input type="text" class="form-control" name="diachi" placeholder="Nhập địa chỉ" required>
+                </div>
+                <div class="form-group">
+                    <label>Loại bảo tàng:</label>
+                    <select class="form-control" name="kinda" required>
+                        <option>Bảo tàng Lịch Sử</option>
+                        <option>Bảo tàng Khoa Học</option>
+                        <option>Bảo tàng Nghệ Thuật</option>
+                        <option>Bảo tàng Văn Hóa</option>
+                    </select>
+                </div>                
+                <div class="form-group">
+                    <label>Vĩ độ - X:</label>
+                    <input type="text" class="form-control" name="x" placeholder="Nhập vĩ độ" required>
+                </div>
+                <div class="form-group">
+                    <label>Kinh độ - Y:</label>
+                    <input type="text" class="form-control" name="y" placeholder="Nhập kinh độ" required>
+                </div>
+                <div class="form-group">
+                    <label>Thời gian mở cửa</label>
+                    <input type="text" class="form-control" name="open" placeholder="Thời gian mở" required>
+                </div>
+                <div class="form-group">
+                    <label>Giá vé</label>
+                    <input type="text" class="form-control" name="money" placeholder="Điền giá vé (hoặc 'Miễn phí')" required>
+                </div>
+                <div class="form-group">
+                    <label>Link ảnh</label>
+                    <input type="text" class="form-control" name="pic" placeholder="Nhập đường dẫn ảnh online" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Thêm</button>
+            </form>
+        </div>
+    </body>
+</body>
+</html>
